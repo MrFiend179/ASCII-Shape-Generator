@@ -26,7 +26,7 @@ function squarenrectangle() {
             document.getElementById('maininnrtxt').innerHTML = squareHTML;
         }
     } else {
-        
+
         const size = document.getElementById('inputsqrmn').value
         const char = document.getElementById('inputsqrmn1').value
         if (document.getElementById('fillsqur').checked) {
@@ -95,7 +95,7 @@ function bottomTriangle(size, char) {
 
     return (triangle);
 }
-function bottomfldtrn(size,char){
+function bottomfldtrn(size, char) {
     let triangle = '';
     for (let i = size; i > 0; i--) {
         if (i === size) {
@@ -106,17 +106,17 @@ function bottomfldtrn(size,char){
             triangle += spaces + stars + spaces + '\n';
         }
     }
-    return(triangle)
+    return (triangle)
 }
 
-function topfldtrn(size,char){
+function topfldtrn(size, char) {
     let triangle = '';
     for (let i = 0; i < size; i++) {
         let spaces = ' '.repeat(size - i - 1);
         let stars = char.repeat(2 * i + 1);
         triangle += spaces + stars + spaces + '\n';
     }
-    return(triangle)
+    return (triangle)
 }
 function triangle() {
     const size = document.getElementById('inputsqrmn2').value
@@ -138,4 +138,20 @@ function triangle() {
 
 crtbtnmn1.addEventListener('click', () => {
     triangle()
+})
+
+function table() {
+    console.log('ok')
+    const number = parseInt(document.getElementById('inputsqrmn21').value)
+    const times = parseInt(document.getElementById('inputsqrmn121').value)
+    let table = ''
+    for (let i = 1; i < times + 1;) {
+        console.log(number+ ' x ' + i + ' = ' + number * i)
+        table += number + ' x ' + i + ' = ' + number * i + '\n'
+        i++
+    }
+    document.getElementById('maininnrtxt2').innerText = table
+}
+crtbtnmn1221.addEventListener('click', () => {
+    table()
 })
